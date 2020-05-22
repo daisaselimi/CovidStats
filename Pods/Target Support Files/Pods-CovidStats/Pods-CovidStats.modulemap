@@ -1,0 +1,6 @@
+framework module Pods_CovidStats {
+  umbrella header "Pods-CovidStats-umbrella.h"
+
+  export *
+  module * { export * }
+}

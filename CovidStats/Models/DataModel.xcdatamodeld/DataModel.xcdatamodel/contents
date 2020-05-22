@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CountryDataCD" representedClassName="CountryDataCD" syncable="YES" codeGenerationType="class">
+        <attribute name="confirmed" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="country" attributeType="String"/>
+        <attribute name="critical" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="deaths" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="latitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="recovered" attributeType="Integer 64" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="TotalDataCD" representedClassName=".TotalDataCD" syncable="YES" codeGenerationType="class">
+        <attribute name="confirmed" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="critical" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="deaths" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="recovered" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <elements>
+        <element name="CountryDataCD" positionX="-54" positionY="18" width="128" height="148"/>
+        <element name="TotalDataCD" positionX="-54" positionY="-9" width="128" height="103"/>
+    </elements>
+</model>
