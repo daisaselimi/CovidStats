@@ -21,29 +21,30 @@ struct ListHeaderView: View {
         GeometryReader {
             geometry in
             
-            HStack(spacing: 2){
+            HStack(alignment: .center, spacing: 2){
                 
                 Text("Country")
                     .fontWeight(.bold)
-                    .font(.subheadline)
-                    .frame(width: geometry.size.width/4 + 18, alignment: .leading).padding(.leading, 15)
+                    .font(.system(size: 14))
+                    .frame(width: (geometry.size.width)/4 - 2, alignment: .leading)
                 
                 Text("Confirmed")
                     .fontWeight(.bold)
-                    .font(.subheadline)
-                    .frame(width:  geometry.size.width/4 - 2, height: 40, alignment: .leading)
+                    .font(.system(size: 14))
+                    .frame(width:  (geometry.size.width - 30)/4 - 2, height: 40, alignment: .leading)
                 
                 Text("Deaths")
                     .fontWeight(.bold)
-                    .font(.subheadline)
-                    .frame(width:  geometry.size.width/4 -  18, height: 40, alignment: .leading)
+                    .font(.system(size: 14))
+                    .frame(width:  (geometry.size.width - 60)/4 -  2, height: 40, alignment: .leading)
                 
                 Text("Recovered")
                     .fontWeight(.bold)
-                    .font(.subheadline)
-                    .frame(width:  geometry.size.width/4 - 2, height: 40, alignment: .leading)
+                    .font(.system(size: 14))
+                    .frame(width:  (geometry.size.width - 30)/4 - 2, height: 40, alignment: .leading)
             }
-            .background(Color(.systemGray6)).frame(width: geometry.size.width, height: 40)
+            .frame(width: geometry.size.width, height: 40)
+            .background(Color(.systemGray6))
         }
         
     }

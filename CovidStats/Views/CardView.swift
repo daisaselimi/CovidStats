@@ -21,7 +21,7 @@ struct CardView: View {
             
             VStack {
                 Text(self.totalNumber).animation(nil).font(.system(size: 16))
-                Text(self.title) .minimumScaleFactor(0.1).font(.system(size: 15)).padding(.top, 5)
+                Text(self.title).font(.system(size: 15)).padding(.top, 5)
                     .foregroundColor(self.color)
             }.frame(width: geometry.size.width, height: 80, alignment: .center)
                 .background(Color(.systemGray6))

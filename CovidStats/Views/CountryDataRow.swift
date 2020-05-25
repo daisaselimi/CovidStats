@@ -17,30 +17,30 @@ struct CountryDataRow: View {
         GeometryReader {
             geometry in
             
-            HStack(spacing: 2) {
-                
+            HStack(alignment: .center, spacing: 2) {
+
                 Text(self.countryData.country)
-                    .fontWeight(.bold)
+                    .fontWeight(.medium)
                     .font(.subheadline)
-                    .frame(width: geometry.size.width/4 + 18, alignment: .leading).padding(.leading, 15)
+                    .frame(width: (geometry.size.width)/4 - 2, alignment: .leading)
                 
                 Text(self.countryData.confirmed.formatNumber())
                     .fontWeight(.medium)
                     .font(.subheadline)
-                    .frame(width:  geometry.size.width/4 - 2, height: 40, alignment: .leading)
+                    .frame(width: (geometry.size.width - 30)/4 - 2, height: 40, alignment: .leading)
                 
                 Text(self.countryData.deaths.formatNumber())
                     .fontWeight(.medium)
                     .font(.subheadline)
-                    .frame(width:  geometry.size.width/4 - 18, height: 40, alignment: .leading)
+                    .frame(width: (geometry.size.width - 60)/4 - 2, height: 40, alignment: .leading)
                     .foregroundColor(.red)
                 
                 Text(self.countryData.recovered.formatNumber())
                     .fontWeight(.medium)
                     .font(.subheadline)
-                    .frame(width:  geometry.size.width/4 - 2, height: 40, alignment: .leading)
+                    .frame(width:  (geometry.size.width - 30)/4 - 2, height: 40, alignment: .leading)
                     .foregroundColor(Color(.systemGreen))
-            }.frame(width: geometry.size.width)
+            }.frame(width: geometry.size.width-30)
         }
     }
 }
