@@ -15,6 +15,7 @@ struct MapView: UIViewRepresentable {
     
     @Binding var countryData: [CountryData]
     let locationManager = CLLocationManager()
+    var filterBy: String
     
     func updateUIView(_ uiView: MKMapView, context: UIViewRepresentableContext<MapView>) {
         
@@ -22,10 +23,21 @@ struct MapView: UIViewRepresentable {
         var allAnnotations: [CoronaCaseAnnotation] = []
         
         for data in countryData {
-            let title = data.country + "\n" + data.confirmed.formatNumber() + "\n" + data.deaths.formatNumber()
+            var title = data.country + "\n" + data.confirmed.formatNumber()
+            switch  filterBy {
+            case "Deaths":
+                title += "\n" + data.deaths.formatNumber()
+            case "Recovered":
+                title += "\n" + data.recovered.formatNumber()
+            case "Confirmed":
+                 title += "\n" + data.confirmed.formatNumber()
+            default:
+               title += "\n" + data.deaths.formatNumber()
+            }
             let coordinate = CLLocationCoordinate2D(latitude: data.latitude, longitude: data.longitute)
             allAnnotations.append(CoronaCaseAnnotation(title: title, coordinate: coordinate))
         }
+        
         uiView.annotations.forEach { uiView.removeAnnotation($0) }
         uiView.addAnnotations(allAnnotations)
     }

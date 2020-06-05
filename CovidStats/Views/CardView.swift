@@ -20,7 +20,8 @@ struct CardView: View {
             geometry in
             
             VStack {
-                Text(self.totalNumber).animation(nil).font(.system(size: 14))
+                Text(self.totalNumber).animation(nil).lineLimit(1).minimumScaleFactor(0.5).allowsTightening(true).padding([.leading, .trailing], 5).font(.system(size: 15))
+              
                 Text(self.title).font(.system(size: 15)).padding(.top, 5)
                     .foregroundColor(self.color)
             }.frame(width: geometry.size.width, height: 80, alignment: .center)
