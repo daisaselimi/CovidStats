@@ -22,6 +22,7 @@
 		7F5153A42471BB5100A93AE3 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5153A32471BB5100A93AE3 /* CardView.swift */; };
 		7F5153A62471BC9C00A93AE3 /* TotalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5153A52471BC9C00A93AE3 /* TotalsView.swift */; };
 		7F5153A82471C54B00A93AE3 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5153A72471C54B00A93AE3 /* SearchView.swift */; };
+		7F622E7624CF231A00A68EA7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7F622E7524CF231A00A68EA7 /* README.md */; };
 		7FB097B224703AAB001CEBD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB097B124703AAB001CEBD6 /* AppDelegate.swift */; };
 		7FB097B424703AAB001CEBD6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB097B324703AAB001CEBD6 /* SceneDelegate.swift */; };
 		7FB097B724703AAB001CEBD6 /* CovidStats.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7FB097B524703AAB001CEBD6 /* CovidStats.xcdatamodeld */; };
@@ -52,6 +53,7 @@
 		7F5153A32471BB5100A93AE3 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		7F5153A52471BC9C00A93AE3 /* TotalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalsView.swift; sourceTree = "<group>"; };
 		7F5153A72471C54B00A93AE3 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		7F622E7524CF231A00A68EA7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7FB097AE24703AAB001CEBD6 /* CovidStats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CovidStats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FB097B124703AAB001CEBD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FB097B324703AAB001CEBD6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 		7FB097A524703AAB001CEBD6 = {
 			isa = PBXGroup;
 			children = (
+				7F622E7524CF231A00A68EA7 /* README.md */,
 				7FB097B024703AAB001CEBD6 /* CovidStats */,
 				7FB097AF24703AAB001CEBD6 /* Products */,
 				135DED1F9F19037DED374266 /* Pods */,
@@ -237,6 +240,7 @@
 			files = (
 				7FB097C124703AB1001CEBD6 /* LaunchScreen.storyboard in Resources */,
 				7FB097BE24703AB1001CEBD6 /* Preview Assets.xcassets in Resources */,
+				7F622E7624CF231A00A68EA7 /* README.md in Resources */,
 				7FB097BB24703AB1001CEBD6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
