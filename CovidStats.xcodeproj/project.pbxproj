@@ -35,6 +35,7 @@
 		7FB5A26A24731BA40085DB9E /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB5A26924731BA40085DB9E /* MapView.swift */; };
 		7FB5A26C24731D600085DB9E /* MapContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB5A26B24731D600085DB9E /* MapContainerView.swift */; };
 		7FF8531D2474909900462B64 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7FF8531B2474909900462B64 /* DataModel.xcdatamodeld */; };
+		7FF87FF524FD59A3004BC578 /* Constants-Blueprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF87FF424FD59A3004BC578 /* Constants-Blueprint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		7FB5A26924731BA40085DB9E /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		7FB5A26B24731D600085DB9E /* MapContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapContainerView.swift; sourceTree = "<group>"; };
 		7FF8531C2474909900462B64 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		7FF87FF424FD59A3004BC578 /* Constants-Blueprint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants-Blueprint.swift"; sourceTree = "<group>"; };
 		B86D13993A8E4A18517D631A /* Pods_CovidStats.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CovidStats.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD5B120A8E41FDE0F9EA00AA /* Pods-CovidStats.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CovidStats.debug.xcconfig"; path = "Target Support Files/Pods-CovidStats/Pods-CovidStats.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -166,6 +168,7 @@
 				7F2AA4552476D4370068E543 /* Constants.swift */,
 				7F2AA4572476D5E80068E543 /* Enums.swift */,
 				7F2AA459247740050068E543 /* Helpers.swift */,
+				7FF87FF424FD59A3004BC578 /* Constants-Blueprint.swift */,
 			);
 			path = CovidStats;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				7FB097B924703AAB001CEBD6 /* ContentView.swift in Sources */,
 				7F5153A22471848F00A93AE3 /* Extensions.swift in Sources */,
 				7F51539C2471807000A93AE3 /* RecentView.swift in Sources */,
+				7FF87FF524FD59A3004BC578 /* Constants-Blueprint.swift in Sources */,
 				7F2AA4582476D5E80068E543 /* Enums.swift in Sources */,
 				7FB5A266247309870085DB9E /* CountryDetailsRowView.swift in Sources */,
 				7F2AA4562476D4370068E543 /* Constants.swift in Sources */,
