@@ -12,16 +12,12 @@ import SwiftyJSON
 
 class CountryDetailsFetchRequest: ObservableObject{
     
-    //inst key: d172e810e7msh47584ae043c146dp12d8eejsnb0b3c42c4a59
-    //my key: 3aa8f9c653msh84b2de04ac91ceap1b6b1bjsne9df2764bcc3
-    
-    
     @Published var detailsData: CountryDetails!
     @Published var isResultEmpty: Bool?
     
     let headers: HTTPHeaders = [
-        "x-rapidapi-host": "covid-193.p.rapidapi.com",
-        "x-rapidapi-key": "3aa8f9c653msh84b2de04ac91ceap1b6b1bjsne9df2764bcc3"
+        RapidApiContstants.host: RapidApiContstants.hostValueForCountryDetails,
+        RapidApiContstants.key: RapidApiContstants.keyValue
     ]
     
     init() {

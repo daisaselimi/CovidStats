@@ -13,6 +13,7 @@ import Foundation
 //    static let host = "x-rapidapi-host"
 //    static let key = "x-rapidapi-key"
 //    static let hostValue = "covid-19-data.p.rapidapi.com"
+//    static let hostValueForCountryDetails = "covid-193.p.rapidapi.com"
 //    static let keyValue =  ""
 //    static let personalKeyValue = ""
 //    
