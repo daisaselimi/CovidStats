@@ -5,7 +5,7 @@ CovidStats is a project that I started to learn more about SwiftUI framework.
 
 It uses a public API to fetch general data for COVID-19 through [RapidApi](https://rapidapi.com)
 
-##### _Please note that this app could not be published for external testing in TestFlight, and it can't be published through App Store either. Apple reference:_
+##### _Please note that this app could not be published for external testing in TestFlight, and it can't be published through App Store either. Apple's reference:_
 > Since the COVID-19 pandemic is a public health crisis, services and information related to it are considered to be part of the healthcare industry.
 
 ##### 

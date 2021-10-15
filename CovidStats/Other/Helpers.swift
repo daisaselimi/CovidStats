@@ -24,7 +24,6 @@ struct CustomTextField: UIViewRepresentable {
         func textFieldDidChangeSelection(_ textField: UITextField) {
             text = textField.text ?? ""
         }
-        
     }
     
     @Binding var text: String
@@ -50,7 +49,6 @@ struct CustomTextField: UIViewRepresentable {
     }
 }
 
-
 struct RoundedCorner: Shape {
     
     var radius: CGFloat = .infinity
@@ -61,7 +59,6 @@ struct RoundedCorner: Shape {
         return Path(path.cgPath)
     }
 }
-
 
 func minutesBetweenDates(_ oldDate: Date, _ newDate: Date) -> CGFloat {
     

@@ -16,32 +16,37 @@ struct CountryDataRow: View {
         
         GeometryReader {
             geometry in
-            
-            HStack(alignment: .center, spacing: 2) {
-
-                Text(self.countryData.country)
-                    .fontWeight(.medium)
-                    .font(.subheadline)
-                    .frame(width: (geometry.size.width)/4 - 2, alignment: .leading)
-                
-                Text(self.countryData.confirmed.formatNumber())
-                    .fontWeight(.medium)
-                    .font(.subheadline)
-                    .frame(width: (geometry.size.width - 30)/4 - 2, height: 40, alignment: .leading)
-                
-                Text(self.countryData.deaths.formatNumber())
-                    .fontWeight(.medium)
-                    .font(.subheadline)
-                    .frame(width: (geometry.size.width - 60)/4 - 2, height: 40, alignment: .leading)
-                    .foregroundColor(.red)
-                
-                Text(self.countryData.recovered.formatNumber())
-                    .fontWeight(.medium)
-                    .font(.subheadline)
-                    .frame(width:  (geometry.size.width - 30)/4 - 2, height: 40, alignment: .leading)
-                    .foregroundColor(Color(.systemGreen))
-            }.frame(width: geometry.size.width-30)
+            VStack(spacing: 0) {
+                HStack(alignment: .center, spacing: 2) {
+                    Text(self.countryData.country)
+                        .fontWeight(.medium)
+                        .foregroundColor(Color(.label))
+                        .font(.subheadline)
+                        .frame(width: abs((geometry.size.width)/4 - 2), alignment: .leading)
+                    
+                    Text(self.countryData.confirmed.formatNumber())
+                        .fontWeight(.medium)
+                        .foregroundColor(Color(.label))
+                        .font(.subheadline)
+                        .frame(width: abs((geometry.size.width - 30)/4 - 2), height: 40, alignment: .leading)
+                    
+                    Text(self.countryData.deaths.formatNumber())
+                        .fontWeight(.medium)
+                        .font(.subheadline)
+                        .frame(width: abs((geometry.size.width - 60)/4 - 2), height: 40, alignment: .leading)
+                        .foregroundColor(.red)
+                    
+                    Text(self.countryData.recovered.formatNumber())
+                        .fontWeight(.medium)
+                        .font(.subheadline)
+                        .frame(width:  abs((geometry.size.width - 30)/4 - 2), height: 40, alignment: .leading)
+                        .foregroundColor(Color(.systemGreen))
+                }
+                .frame(width: geometry.size.width)
+                Divider()
+            }
         }
+        .padding([.top, .bottom], 10)
     }
 }
 

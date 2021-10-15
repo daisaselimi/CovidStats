@@ -13,15 +13,11 @@ struct MapContainerView: View {
     @EnvironmentObject var covidFetch: CovidFetchRequest
     @State var filterBy: String = "Recovered"
     
-    
     var body: some View {
         ZStack(alignment: .topTrailing) {
-            
             MapView(countryData: $covidFetch.allCountries, filterBy: filterBy)
             FilterMapAnnotationsView(filterBy: $filterBy).padding()
-            
         }
-        
     }
 }
 

@@ -17,7 +17,6 @@ struct ListHeaderView: View {
     
     var body: some View {
         
-        
         GeometryReader {
             geometry in
             
@@ -26,22 +25,22 @@ struct ListHeaderView: View {
                 Text("Country")
                     .fontWeight(.bold)
                     .font(.system(size: 14))
-                    .frame(width: (geometry.size.width)/4 - 2, alignment: .leading)
+                    .frame(width: abs((geometry.size.width)/4 - 2), alignment: .leading)
                 
                 Text("Confirmed")
                     .fontWeight(.bold)
                     .font(.system(size: 14))
-                    .frame(width:  (geometry.size.width - 30)/4 - 2, height: 40, alignment: .leading)
+                    .frame(width: abs((geometry.size.width - 30)/4 - 2), height: 40, alignment: .leading)
                 
                 Text("Deaths")
                     .fontWeight(.bold)
                     .font(.system(size: 14))
-                    .frame(width:  (geometry.size.width - 60)/4 -  2, height: 40, alignment: .leading)
+                    .frame(width: abs((geometry.size.width - 60)/4 -  2), height: 40, alignment: .leading)
                 
                 Text("Recovered")
                     .fontWeight(.bold)
                     .font(.system(size: 14))
-                    .frame(width:  (geometry.size.width - 30)/4 - 2, height: 40, alignment: .leading)
+                    .frame(width: abs((geometry.size.width - 30)/4 - 2), height: 40, alignment: .leading)
             }
             .frame(width: geometry.size.width, height: 40)
             .background(Color(.systemGray6))

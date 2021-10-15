@@ -17,11 +17,8 @@ struct RecentView: View {
     @State var didTapTableHeader = false
     
     var body: some View {
-        
         NavigationView {
-            
             VStack {
-                
                 if self.isSearchVisible && !self.didTapTableHeader {
                     SearchView(searchText: self.$searchText).onTapGesture {
                         UIApplication.shared.windows
@@ -32,8 +29,7 @@ struct RecentView: View {
                     TotalsView(totalsData: self.covidFetch.totalData).padding(10)
                 }
                 
-                VStack{
-                    
+                VStack(spacing: 5){
                     ListHeaderView()
                         .gesture(DragGesture(minimumDistance: 30, coordinateSpace: .local).onEnded({ (value) in
                         if value.translation.height < 0 {
@@ -50,26 +46,20 @@ struct RecentView: View {
                         }
                     })).frame(height: 40)
                     
-                    
-                    List {
+                    ScrollView(.vertical, showsIndicators: false) {
                         ForEach(self.covidFetch.allCountries.filter {
-                            self.searchText.isEmpty ? true: $0.country.lowercased().contains(self.searchText.lowercased()) }
+                            self.searchText.isEmpty ? true : $0.country.lowercased().contains(self.searchText.lowercased()) }
                         , id: \.country) { countryData in
                             NavigationLink(destination: CountryDetailsView(countryName: countryData.country, countryData: countryData)) {
                                 CountryDataRow(countryData: countryData)
                             }  
-                            
                         }
-                        .listRowInsets(EdgeInsets())
-                        
-                    }//.id(UUID())
-                        .padding(.trailing, -15.0)
+                    }
                 }
             }
             .navigationBarTitle("Recents", displayMode: .inline)
             .navigationBarItems(trailing:
                 Button(action: {
-                    
                     withAnimation(.easeOut(duration: 0.2)) {
                         self.isSearchVisible.toggle()
                         self.didTapTableHeader = false

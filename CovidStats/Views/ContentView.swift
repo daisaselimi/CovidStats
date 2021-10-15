@@ -11,6 +11,7 @@ import SwiftUI
 struct ContentView: View {
     //@ObservedObject var covidFetch = CovidFetchRequest()
     @ObservedObject var countryFetch = CountryDetailsFetchRequest()
+    
     var body: some View {
         TabView {
             RecentView()
@@ -21,7 +22,6 @@ struct ContentView: View {
                 .tabItem {Tab(imageName: "map", text: "Map") }
                 .tag(1)
         }
-            
     }
 }
 

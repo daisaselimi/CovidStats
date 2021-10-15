@@ -67,7 +67,6 @@ struct CountryDetailsView: View {
                             CountryDetailsRowView(rowName: "Deaths", numberOfCases: countryData.deaths.formatNumber(), color: Color.red)
                             Divider()
                             CountryDetailsRowView(rowName: "Fatality%", numberOfCases: String(format: "%.2f", countryData.fatalityRate), color: Color(.red))
-                            
                         }
                         Group {
                             Divider()
