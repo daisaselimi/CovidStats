@@ -11,14 +11,13 @@ import SwiftUI
 
 struct CountryDetailsView: View {
     
-    @ObservedObject var countryFetch = CountryDetailsFetchRequest()
+    @ObservedObject var countryFetch = CountryDetailsVieWModel()
     @State var dataFetched = false
     var countryName: String!
     var countryData: CountryData!
     
     @ViewBuilder
     var body: some View {
-        
         if countryFetch.isResultEmpty == nil {
             ActivityIndicator().frame(width: 50, height: 50).onAppear {
                 self.countryFetch.getDetailsData(country: self.countryName.replacingOccurrences(of: " ", with: "-"))

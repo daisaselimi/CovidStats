@@ -15,9 +15,7 @@ struct CountryDetailsRowView: View {
     var color: Color = .primary
     
     var body: some View {
-        
         VStack(spacing: 0) {
-            
             HStack {
                 Text(rowName)
                     .font(.body)

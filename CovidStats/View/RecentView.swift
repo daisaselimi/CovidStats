@@ -10,8 +10,8 @@ import SwiftUI
 
 struct RecentView: View {
     
-    @EnvironmentObject var covidFetch: CovidFetchRequest
-    @ObservedObject var countryFetch = CountryDetailsFetchRequest()
+    @EnvironmentObject var covidFetch: CovidDataViewModel
+    @ObservedObject var countryFetch = CountryDetailsVieWModel()
     @State var searchText = ""
     @State var isSearchVisible = false
     @State var didTapTableHeader = false
@@ -46,13 +46,14 @@ struct RecentView: View {
                         }
                     })).frame(height: 40)
                     
-                    ScrollView(.vertical, showsIndicators: false) {
+                    ScrollView(.vertical, showsIndicators: true) {
                         ForEach(self.covidFetch.allCountries.filter {
                             self.searchText.isEmpty ? true : $0.country.lowercased().contains(self.searchText.lowercased()) }
                         , id: \.country) { countryData in
                             NavigationLink(destination: CountryDetailsView(countryName: countryData.country, countryData: countryData)) {
                                 CountryDataRow(countryData: countryData)
-                            }  
+                            }
+                            .buttonStyle(PlainButtonStyle())
                         }
                     }
                 }

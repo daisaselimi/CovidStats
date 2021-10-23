@@ -9,15 +9,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    //@ObservedObject var covidFetch = CovidFetchRequest()
-    @ObservedObject var countryFetch = CountryDetailsFetchRequest()
+    
+    @ObservedObject var countryFetch = CountryDetailsVieWModel()
     
     var body: some View {
         TabView {
             RecentView()
                 .tabItem {Tab(imageName: "chart.bar", text: "Recent Statistics") }
             .tag(0)
-            
             MapContainerView().edgesIgnoringSafeArea(.all)
                 .tabItem {Tab(imageName: "map", text: "Map") }
                 .tag(1)

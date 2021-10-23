@@ -16,12 +16,9 @@ struct ListHeaderView: View {
     }
     
     var body: some View {
-        
         GeometryReader {
             geometry in
-            
             HStack(alignment: .center, spacing: 2){
-                
                 Text("Country")
                     .fontWeight(.bold)
                     .font(.system(size: 14))
@@ -45,7 +42,6 @@ struct ListHeaderView: View {
             .frame(width: geometry.size.width, height: 40)
             .background(Color(.systemGray6))
         }
-        
     }
 }
 

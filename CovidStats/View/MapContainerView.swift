@@ -10,7 +10,7 @@ import SwiftUI
 
 struct MapContainerView: View {
     
-    @EnvironmentObject var covidFetch: CovidFetchRequest
+    @EnvironmentObject var covidFetch: CovidDataViewModel
     @State var filterBy: String = "Recovered"
     
     var body: some View {
@@ -23,6 +23,10 @@ struct MapContainerView: View {
 
 struct FilterMapAnnotationsView: View {
     
+    @Binding var filterBy: String
+    @State private var currentPosition: CGSize = .zero
+    @State private var newPosition: CGSize = .zero
+    
     let statusBarHeight: CGFloat = {
         var heightToReturn: CGFloat = 0.0
         for window in UIApplication.shared.windows {
@@ -33,14 +37,8 @@ struct FilterMapAnnotationsView: View {
         return heightToReturn
     }()
     
-    @Binding var filterBy: String
-    @State private var currentPosition: CGSize = .zero
-    @State private var newPosition: CGSize = .zero
-    
     var body: some View {
-        
         ZStack(alignment: .center) {
-            
             VStack(alignment: .leading, spacing: 5) {
                 
                 Text("Filter by").font(.system(size: 12)).foregroundColor(Color(.systemRed))
@@ -64,23 +62,20 @@ struct FilterMapAnnotationsView: View {
         .frame(width: 100, height: 100)
         .offset(x: currentPosition.width, y: currentPosition.height)
         .gesture(DragGesture()
-        .onChanged { value in
+                    .onChanged { value in
             self.currentPosition = CGSize(width: value.translation.width + self.newPosition.width, height: value.translation.height + self.newPosition.height)
         }   // 4.
-            .onEnded { value in
-                self.currentPosition = CGSize(width: value.translation.width + self.newPosition.width, height: value.translation.height + self.newPosition.height)
-  
-                self.newPosition = self.currentPosition
-                              print(self.newPosition.width)
-                print(self.newPosition.height)
-            }
-        )
-            .onAppear {
-                
-                self.currentPosition = CGSize(width: 0, height: self.statusBarHeight)
-                self.newPosition = self.currentPosition
+                    .onEnded { value in
+            self.currentPosition = CGSize(width: value.translation.width + self.newPosition.width, height: value.translation.height + self.newPosition.height)
+            
+            self.newPosition = self.currentPosition
+            print(self.newPosition.width)
+            print(self.newPosition.height)
+        })
+        .onAppear {
+            self.currentPosition = CGSize(width: 0, height: self.statusBarHeight)
+            self.newPosition = self.currentPosition
         }
-        
     }
 }
 

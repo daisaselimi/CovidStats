@@ -13,7 +13,6 @@ struct CountryDataRow: View {
     var countryData: CountryData
     
     var body: some View {
-        
         GeometryReader {
             geometry in
             VStack(spacing: 0) {
@@ -42,11 +41,11 @@ struct CountryDataRow: View {
                         .frame(width:  abs((geometry.size.width - 30)/4 - 2), height: 40, alignment: .leading)
                         .foregroundColor(Color(.systemGreen))
                 }
-                .frame(width: geometry.size.width)
                 Divider()
             }
+            .frame(width: geometry.size.width)
         }
-        .padding([.top, .bottom], 10)
+        .padding(.vertical, 10)
     }
 }
 

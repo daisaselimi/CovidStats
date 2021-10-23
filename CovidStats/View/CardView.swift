@@ -15,10 +15,8 @@ struct CardView: View {
     var color: Color = .primary
     
     var body: some View {
-        
         GeometryReader {
             geometry in
-            
             VStack {
                 Text(self.totalNumber).animation(nil).lineLimit(1).minimumScaleFactor(0.5).allowsTightening(true).padding([.leading, .trailing], 5).font(.system(size: 15))
               

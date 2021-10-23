@@ -14,6 +14,7 @@ import SwiftUI
 struct MapView: UIViewRepresentable {
     
     @Binding var countryData: [CountryData]
+    
     let locationManager = CLLocationManager()
     var filterBy: String
     

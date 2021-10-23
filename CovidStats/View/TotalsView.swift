@@ -10,18 +10,16 @@ import SwiftUI
 
 struct TotalsView: View {
     
-    var totalsData: TotalData = testTotalData
+    var totalsData: TotalsData = testTotalData
     
     var body: some View {
         VStack {
-            
             HStack {
                 CardView(totalNumber: totalsData.confirmed.formatNumber(), title: "Confirmed")
                 CardView(totalNumber: totalsData.recovered.formatNumber(), title: "Recovered", color: Color(.systemGreen))
                 CardView(totalNumber: totalsData.critical.formatNumber(), title: "Critical", color: Color(.systemPink))
                 CardView(totalNumber: totalsData.deaths.formatNumber(), title: "Deaths", color: .red)
             }
-            
             HStack {
                 CardView(totalNumber: String(format: "%.2f", totalsData.fatalityRate), title: "Death %", color: Color(.systemPink))
                 

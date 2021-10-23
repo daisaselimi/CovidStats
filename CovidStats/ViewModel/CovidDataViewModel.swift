@@ -11,12 +11,12 @@ import Alamofire
 import SwiftyJSON
 import CoreData
 
-class CovidFetchRequest: ObservableObject{
+class CovidDataViewModel: ObservableObject {
     
     @Published var allCountries: [CountryData] = []
-    @Published var totalData: TotalData = testTotalData
+    @Published var totalData: TotalsData = testTotalData
     
-    //coredate objects
+    //CoreData objects
     var totalDataCD: [TotalDataCD]!
     var allcountriesCD: [CountryDataCD]!
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -53,20 +53,22 @@ class CovidFetchRequest: ObservableObject{
     
     func fetchTotalsFromCoreData() {
         print("Fetched from CORE DATA!")
-        var tempTotalData: [TotalData] = []
+        var tempTotalData: [TotalsData] = []
         print(totalDataCD.count)
         totalDataCD.forEach { (td) in
-            tempTotalData.append(TotalData(confirmed: Int(td.confirmed), critical: Int(td.critical), deaths: Int(td.deaths), recovered: Int(td.recovered)))
+            tempTotalData.append(TotalsData(confirmed: Int(td.confirmed), critical: Int(td.critical), deaths: Int(td.deaths), recovered: Int(td.recovered)))
         }
         self.totalData = tempTotalData.first!
     }
     
     func fetchTotalFromWebAPI() {
         AF.request("https://covid-19-data.p.rapidapi.com/totals?format=json", headers: headers).responseJSON { (response) in
+            
             self.manipulateCoreData(objects: self.totalDataCD, operationType: .delete, coreDataEntity: .totalData)
             UserDefaults.standard.setValue(Date(), forKey: lastFetchedFromWeb)
+            
             let result = response.data
-            print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
+            
             if result != nil {
                 let json = JSON(result!)
                 //print(json)
@@ -74,7 +76,7 @@ class CovidFetchRequest: ObservableObject{
                 let deaths = json[0]["deaths"].intValue
                 let recovered = json[0]["recovered"].intValue
                 let critical = json[0]["critical"].intValue
-                self.totalData = TotalData(confirmed: confirmed, critical: critical, deaths: deaths, recovered: recovered)
+                self.totalData = TotalsData(confirmed: confirmed, critical: critical, deaths: deaths, recovered: recovered)
                 let totalsDataCD = TotalDataCD(context: self.context)
                 totalsDataCD.confirmed = Int64(confirmed)
                 totalsDataCD.deaths = Int64(deaths)
@@ -88,8 +90,11 @@ class CovidFetchRequest: ObservableObject{
     }
     
     func getAllCountries() {
+        
         manipulateCoreData(objects: allcountriesCD, operationType: .read, coreDataEntity: .countryData)
+        
         var oldDate: Date!
+        
         if UserDefaults.standard.object(forKey: lastFetchedFromWeb) != nil {
             oldDate = (UserDefaults.standard.object(forKey: lastFetchedFromWeb) as! Date)
         } else {
@@ -109,9 +114,8 @@ class CovidFetchRequest: ObservableObject{
     }
     
     func fetchAllCountriesFromCoreData() {
-        print("Fetched from CORE DATA! - ALL COUNTRIES")
+        print("Fetched from CORE DATA - ALL COUNTRIES")
         var tempAllCountriedData: [CountryData] = []
-        print(allcountriesCD.count)
         allcountriesCD.forEach { (td) in
             tempAllCountriedData.append(CountryData(country: td.country!, confirmed: td.confirmed, critical: td.critical, deaths: td.deaths, recovered: td.recovered, longitute: td.longitude, latitude: td.latitude))
         }
@@ -151,7 +155,6 @@ class CovidFetchRequest: ObservableObject{
                 
                 self.allCountries.forEach { (countryDetail) in
                     let countryDetailsCD = CountryDataCD(context: self.context)
-                    
                     countryDetailsCD.confirmed = countryDetail.confirmed
                     countryDetailsCD.country = countryDetail.country
                     countryDetailsCD.critical = countryDetail.critical
@@ -187,7 +190,6 @@ class CovidFetchRequest: ObservableObject{
                     allcountriesCD = try context.fetch(request)
                 }
             }
-            
         } catch {
             print("error manipulating context \(error)")
         }

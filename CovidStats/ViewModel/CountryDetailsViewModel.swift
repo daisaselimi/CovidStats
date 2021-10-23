@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-class CountryDetailsFetchRequest: ObservableObject{
+class CountryDetailsVieWModel: ObservableObject{
     
     @Published var detailsData: CountryDetails!
     @Published var isResultEmpty: Bool?

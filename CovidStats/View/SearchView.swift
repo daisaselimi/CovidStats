@@ -13,7 +13,6 @@ struct SearchView: View {
     @Binding var searchText: String
     
     var body: some View {
-        
         HStack {
             CustomTextField(text: $searchText, isFirstResponder: true)
                 .padding()
